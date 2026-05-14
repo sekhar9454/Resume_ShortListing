@@ -7,9 +7,9 @@ require('dotenv').config();
 const fs = require('fs');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({ origin: 'https://your-frontend-url.onrender.com' }));
 app.use(express.json());
 
 // Set up multer for handling file uploads (store in memory for processing)
